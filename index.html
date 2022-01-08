@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+</head>
+<body>
+  <br>
+  <main>
+    <nav>
+      <div class="nav-left">
+        Rock
+        <br>
+        Paper
+        <br> 
+        Scissors
+      </div>
+      <div class="nav-right">
+        Score
+        <div class="score" id="score">
+          0
+        </div>
+      </div>
+    </nav>
+    <br><br><br><br>
+    <section>
+      <button class="papel" onclick="elegirMano(0)">
+        <img src="./images/icon-paper.svg" alt="">
+      </button>
+      <button class="tijera" onclick="elegirMano(1)">
+        <img src="./images/icon-scissors.svg" alt="">
+      </button>
+      <button class="piedra" onclick="elegirMano(2)">
+        <img src="./images/icon-rock.svg" alt="">
+      </button>
+      <!-- <p>
+        You Picked
+        The House Picked
+      
+        You Win
+        You Lose
+      
+        Play Again
+      </p> -->
+    </section>
+    <br><br><br><br>
+    <section>
+      <button class="btn-rules" id="btn-rules" onclick="mostrarInfo()">
+        Rules
+      </button>
+    </section>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Joaquin Villanueva</a>.
+    </footer>
+    <script src="./script.js"></script>
+  </main>
+  <div class="rules-info" id="rules-info">
+    <div>
+      <h2>Rules</h2>
+    </div>
+    <img src="./images/image-rules.svg" alt="Instructions" srcset="" id="instruction">
+    <button id="close-rules" onclick="mostrarMain()">
+      <img src="./images/icon-close.svg" alt="Close" id="btn-close">
+    </button>
+  </div>
+</body>
+</html>

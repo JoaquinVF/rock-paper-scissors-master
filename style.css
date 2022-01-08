@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    text-transform: uppercase;
+}
+body{
+    height: 99vh;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -20px;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+}
+
+nav{
+    width: 80vw;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 30px;
+}
+.nav-left{
+    color: white;
+}
+.nav-right{
+    display: grid;
+    place-content: center;
+    font-size: 0.8em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: white;
+    color: hsl(229, 64%, 46%);
+}
+.nav-right .score{
+    color: hsl(229, 25%, 31%);
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+}
+
+section {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-column-gap: 25px;
+    grid-row-gap: 10px;
+    background-image: url("./images/bg-triangle.svg");
+    background-position: center 55px;
+    background-size: 15rem;
+    background-repeat: no-repeat;
+}
+.papel, .tijera, .piedra{
+    width: 125px;
+    padding: 12px;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.papel:hover, .tijera:hover, .piedra:hover{
+    opacity: 80%;
+}
+.papel img, .tijera img, .piedra img, .picked-img, .house-img{
+    padding: 20px 24px;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: inset -3px 36px 0px -31px rgba(17, 15, 44, 0.226);
+}
+.papel{
+    grid-column: 1/2;
+    background: radial-gradient(hsl(230, 89%, 62%),hsl(230, 89%, 65%));
+    box-shadow: -1px 10px 0px -5px hsl(230, 54%, 46%);
+}
+.tijera{
+    grid-column: 2/3;
+    background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    box-shadow: -1px 10px 0px -5px hsl(39, 88%, 41%);
+}
+.piedra{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    background: radial-gradient(hsl(349, 71%, 52%),hsl(349, 70%, 56%));
+    box-shadow: -1px 10px 0px -5px hsl(349, 70%, 43%);
+}
+.piedra img{
+    width: 99px;
+    height: 99px;
+}
+.franja-1{
+    position: absolute;
+    margin-bottom: 130px;
+    width: 100px;
+    height: 20px;
+    background:rgba(0, 0, 0, 0.226);
+    z-index: -1;
+}
+.franja-1:nth-child(2){
+    margin: 0 100px 0 0;
+    transform: rotate(45deg);
+}
+.franja-1:last-child{
+    margin: 0 0 0 100px;
+    transform: rotate(-45deg);
+}
+
+
+.rules-info{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    left: 0;
+    place-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.rules-info div{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.rules-info #instruction{
+    margin-top: 100px;
+}
+.rules-info button{
+    border: 0;
+    background-color: transparent;
+    margin-top: 100px;
+    cursor: pointer;
+}
+
+section:nth-child{
+    position: relative;
+    /* top: 200px; */
+    display: flex;
+    justify-content: end;
+}
+section .btn-rules{
+    color: white;
+    background-color: transparent;
+    font-family: 600;
+    letter-spacing: 3px;
+    border: 2px solid hsl(217, 16%, 45%);
+    border-radius: 7px;
+    padding: 8px 30px;
+    cursor: pointer;
+}
+section .btn-rules:hover{
+    color: hsl(214, 47%, 23%);
+    background-color: white;
+    border: 2px solid hsl(212, 14%, 24%);
+}
+
+footer{
+    position: absolute;
+    bottom: 0px;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
