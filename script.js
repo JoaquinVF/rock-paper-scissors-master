@@ -111,6 +111,8 @@ function elegirMano(number) {
     let result = whoWin(manoPicked, houseSelect);
     calculateTotalScore(result);
     scoreNumber.innerText = totalScore;
+
+    localStorage.setItem('playerPoints', totalScore);
 }
 
 function calculateTotalScore(result){
@@ -137,4 +139,10 @@ function whoWin(manoPicked, houseSelect) {
         gameStatus.innerText = "YOU LOSE"
         return "lose";
     }
+}
+
+var playerPoints = localStorage.getItem('playerPoints');
+if (playerPoints > 0){
+    scoreNumber.innerText = playerPoints;
+    totalScore = parseInt(playerPoints);
 }
