@@ -1,5 +1,9 @@
 const btn_rules = document.getElementById("btn-rules");
 const body = document.querySelector("body");
+const scoreNumber = document.querySelector("#score");
+
+let gameStatus = document.createElement("h2");
+let totalScore = 0;
 
 function mostrarInfo(){
     let info = document.getElementById("rules-info");
@@ -78,12 +82,14 @@ function elegirMano(number) {
     newSection.appendChild(newHousePicked);
     newSection.appendChild(newYou);
     newSection.appendChild(newHouse);
+    newSection.appendChild(gameStatus);
     document.querySelector("main").insertBefore(newSection, document.getElementsByTagName("section")[1]);
 
     newSection.style.backgroundImage = "none";
     newSection.style.marginBottom = "40px";
     newYouPicked.style.marginTop = "20px";
     newHousePicked.style.marginTop = "20px";
+    gameStatus.style.marginTop = "50px";
 
     newSection.style.display = "grid";
     newYouPicked.style.gridColumn = "1/2";
@@ -94,19 +100,41 @@ function elegirMano(number) {
     newHouse.style.gridColumn ="2/3";
     newHouse.style.gridRow = "1/2";
 
+    gameStatus.style.gridColumn = "1/3";
+    gameStatus.style.gridRow = "3/4";
+
     newYouPicked.style.color = "white";
     newHousePicked.style.color = "white";
+    gameStatus.style.color = "white";
+    gameStatus.style.fontSize = "xxx-large";
 
+    let result = whoWin(manoPicked, houseSelect);
+    calculateTotalScore(result);
+    scoreNumber.innerText = totalScore;
+}
+
+function calculateTotalScore(result){
+    switch(result){
+        case "win":
+            totalScore += 1;
+            break;
+        case "lose":
+            if (totalScore > 0) totalScore -= 1;
+            break;
+    }
 }
 
 function whoWin(manoPicked, houseSelect) {
     if (manoPicked == houseSelect) {
+        gameStatus.innerText = "TIE"
         return "tie";
     }
     else if ((manoPicked == "paper" && houseSelect == "rock") || (manoPicked == "rock" && houseSelect == "scissors") || (manoPicked == "scissors" && houseSelect == "paper")){
+        gameStatus.innerText = "YOU WIN"
         return "win";
     }
     else{
+        gameStatus.innerText = "YOU LOSE"
         return "lose";
     }
 }
